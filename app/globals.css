@@ -33,8 +33,6 @@ body {
     "Microsoft YaHei", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(255, 197, 109, 0.34), transparent 24%),
-    radial-gradient(circle at top right, rgba(31, 122, 116, 0.14), transparent 26%),
     linear-gradient(180deg, #fffaf4 0%, #fff6eb 40%, #fffaf5 100%);
   min-height: 100vh;
   overflow-x: hidden;
@@ -109,7 +107,7 @@ section[id] {
   box-shadow: 0 8px 22px rgba(33, 48, 59, 0.06);
   color: var(--teal-deep);
   font-size: 14px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
 }
 
 .eyebrow::before {
@@ -133,7 +131,7 @@ p {
 h1,
 h2 {
   font-family: "Trebuchet MS", "PingFang SC", sans-serif;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 h1 {
@@ -326,6 +324,26 @@ p {
   gap: 12px;
 }
 
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-contact a,
+.hero-contact span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(33, 48, 59, 0.08);
+  color: var(--teal-deep);
+  font-size: 0.92rem;
+  box-shadow: 0 10px 22px rgba(33, 48, 59, 0.07);
+}
+
 .chip {
   padding: 10px 14px;
   border-radius: 999px;
@@ -466,14 +484,33 @@ p {
   line-height: 1.5;
 }
 
-.hero-illustration {
-  width: 100%;
+.hero-photo-stack {
+  position: relative;
+  min-height: 430px;
   border-radius: 28px;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.65), transparent 28%),
-    linear-gradient(135deg, rgba(217, 241, 234, 0.92), rgba(248, 221, 213, 0.82));
-  padding: 24px;
+  background: linear-gradient(135deg, rgba(217, 241, 234, 0.92), rgba(248, 221, 213, 0.82));
+}
+
+.hero-photo {
+  position: absolute;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  box-shadow: 0 22px 42px rgba(33, 48, 59, 0.16);
+}
+
+.hero-photo-main {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-photo-small {
+  right: 22px;
+  bottom: 22px;
+  width: min(42%, 220px);
+  height: 150px;
+  border-radius: 22px;
 }
 
 .trust-band {
@@ -670,6 +707,7 @@ p {
 }
 
 .price-card {
+  position: relative;
   display: grid;
   gap: 22px;
   padding: 28px;
@@ -677,6 +715,16 @@ p {
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(33, 48, 59, 0.08);
   box-shadow: 0 18px 36px rgba(33, 48, 59, 0.08);
+}
+
+.plan-badge {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 142, 116, 0.16);
+  color: #a64734;
+  font-size: 0.86rem;
+  font-weight: 700;
 }
 
 .price-card.featured {
@@ -739,6 +787,7 @@ p {
 .space-stage {
   position: relative;
   min-height: 640px;
+  aspect-ratio: 4 / 3;
   border-radius: 34px;
   overflow: hidden;
   border: 1px solid rgba(33, 48, 59, 0.08);
@@ -747,6 +796,8 @@ p {
 }
 
 .space-stage img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -952,6 +1003,20 @@ p {
   color: rgba(255, 255, 255, 0.84);
 }
 
+.booking-eyebrow {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.booking-shell h2 {
+  margin-top: 20px;
+}
+
+.booking-shell .booking-actions {
+  margin-top: 24px;
+}
+
 .booking-cards {
   display: grid;
   gap: 16px;
@@ -991,17 +1056,6 @@ p {
 
 .footer-row p {
   font-size: 0.92rem;
-}
-
-body.js-ready [data-reveal] {
-  opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 600ms ease, transform 600ms ease;
-}
-
-body.js-ready [data-reveal].is-visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 @keyframes float {
@@ -1142,6 +1196,10 @@ body.js-ready [data-reveal].is-visible {
   .hero-card {
     padding-bottom: 24px;
   }
+
+  .hero-photo-stack {
+    min-height: 360px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1172,6 +1230,17 @@ body.js-ready [data-reveal].is-visible {
 
   .space-stage {
     min-height: 520px;
+  }
+
+  .hero-photo-stack {
+    min-height: 300px;
+  }
+
+  .hero-photo-small {
+    width: 48%;
+    height: 118px;
+    right: 14px;
+    bottom: 14px;
   }
 
   .space-thumbs {
