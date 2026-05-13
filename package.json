@@ -1,0 +1,16 @@
+{
+  "name": "bubble-tail-pet-care",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Next.js pet grooming landing page for 泡泡尾巴宠物洗护",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
