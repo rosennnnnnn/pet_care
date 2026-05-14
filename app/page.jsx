@@ -164,6 +164,11 @@ const spaceItems = [
   },
 ];
 
+const quickBookingOptions = {
+  pets: ["小型犬", "中大型犬", "猫咪", "其他宠物"],
+  services: ["基础香波洗护", "深层去浮毛护理", "敏感宠安抚洗护", "清爽修型整理"],
+};
+
 const reviews = [
   {
     name: "陆女士 / 比熊奶盖",
@@ -309,6 +314,47 @@ function Hero() {
             <div className="floating-badge badge-right">
               <strong>护理小结同步</strong>
               <span>皮肤观察、打结位置、吹干完成度，离店前一次说明清楚。</span>
+            </div>
+            <div className="hero-booking-card" aria-label="快捷预约卡片">
+              <div>
+                <strong>老客户快捷预约</strong>
+                <span>直接选择日期、宠物类型和服务项目，1 分钟内完成提交。</span>
+              </div>
+              <form className="hero-booking-form">
+                <label>
+                  到店日期
+                  <input type="date" name="visitDate" aria-label="到店日期" />
+                </label>
+                <label>
+                  宠物类型
+                  <select name="petType" defaultValue="" aria-label="宠物类型">
+                    <option value="" disabled>
+                      请选择宠物类型
+                    </option>
+                    {quickBookingOptions.pets.map((pet) => (
+                      <option key={pet} value={pet}>
+                        {pet}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  服务项目
+                  <select name="serviceType" defaultValue="" aria-label="服务项目">
+                    <option value="" disabled>
+                      请选择服务项目
+                    </option>
+                    {quickBookingOptions.services.map((service) => (
+                      <option key={service} value={service}>
+                        {service}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <a className="btn btn-primary" href="#booking">
+                  立即快捷预约
+                </a>
+              </form>
             </div>
             <div className="hero-photo-stack" aria-label="泡泡尾巴门店环境展示">
               <Image
