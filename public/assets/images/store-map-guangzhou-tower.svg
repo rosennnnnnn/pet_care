@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">广东省广州市广州塔1号周边手绘地图</title>
+  <desc id="desc">以广州塔为中心，绘制珠江、阅江西路、艺洲路、广州塔地铁站、赤岗塔站和海心桥等周边位置。</desc>
+  <defs>
+    <style>
+      .map-label {
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        paint-order: stroke fill;
+        stroke: rgba(255, 253, 248, 0.92);
+        stroke-width: 7px;
+        stroke-linejoin: round;
+      }
+    </style>
+    <linearGradient id="water" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#bde7ef"/>
+      <stop offset="0.55" stop-color="#90d4df"/>
+      <stop offset="1" stop-color="#74c4d2"/>
+    </linearGradient>
+    <linearGradient id="park" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#dff4df"/>
+      <stop offset="1" stop-color="#bfe8ca"/>
+    </linearGradient>
+    <linearGradient id="tower" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ff8e74"/>
+      <stop offset="1" stop-color="#ffbd8a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1b4f54" flood-opacity="0.16"/>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#d9e7e3" stroke-width="1" opacity="0.65"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="760" rx="44" fill="#fffdf8"/>
+  <rect width="1280" height="760" rx="44" fill="url(#grid)" opacity="0.5"/>
+  <path d="M-42 504 C156 410 280 464 430 512 C602 568 704 546 868 464 C1026 385 1140 402 1328 478 L1328 840 L-42 840 Z" fill="url(#water)"/>
+  <path d="M0 506 C176 418 284 470 430 516 C595 568 702 550 862 470 C1028 387 1142 408 1280 462" fill="none" stroke="#ecfbff" stroke-width="38" opacity="0.7"/>
+  <path d="M-10 358 C136 322 270 330 384 374 C492 415 589 423 702 384 C824 342 960 300 1300 318" fill="none" stroke="#f0c879" stroke-width="42" stroke-linecap="round"/>
+  <path d="M-10 358 C136 322 270 330 384 374 C492 415 589 423 702 384 C824 342 960 300 1300 318" fill="none" stroke="#fff9ed" stroke-width="25" stroke-linecap="round"/>
+  <path d="M143 170 C282 182 423 222 546 282 C658 337 786 344 916 296 C1017 259 1126 243 1270 248" fill="none" stroke="#bfcfd0" stroke-width="31" stroke-linecap="round"/>
+  <path d="M143 170 C282 182 423 222 546 282 C658 337 786 344 916 296 C1017 259 1126 243 1270 248" fill="none" stroke="#fffaf0" stroke-width="18" stroke-linecap="round"/>
+  <path d="M352 48 C398 174 445 276 510 354 C570 426 637 500 694 718" fill="none" stroke="#ccd8d2" stroke-width="30" stroke-linecap="round"/>
+  <path d="M352 48 C398 174 445 276 510 354 C570 426 637 500 694 718" fill="none" stroke="#fffaf0" stroke-width="17" stroke-linecap="round"/>
+  <path d="M830 54 C812 182 788 280 740 356 C681 450 638 558 626 728" fill="none" stroke="#ccd8d2" stroke-width="28" stroke-linecap="round"/>
+  <path d="M830 54 C812 182 788 280 740 356 C681 450 638 558 626 728" fill="none" stroke="#fffaf0" stroke-width="16" stroke-linecap="round"/>
+  <path d="M92 74 L274 92 L240 238 L70 220 Z" fill="url(#park)" opacity="0.95"/>
+  <path d="M930 78 L1196 86 L1166 220 L894 214 Z" fill="url(#park)" opacity="0.95"/>
+  <path d="M736 476 C806 438 904 430 1000 452 C1064 467 1114 498 1168 548" fill="none" stroke="#f2f7f5" stroke-width="13" stroke-linecap="round" stroke-dasharray="4 22"/>
+  <g filter="url(#shadow)">
+    <path d="M612 223 C592 285 576 374 574 461 C572 540 594 594 640 666 C686 594 708 540 706 461 C704 374 688 285 668 223 Z" fill="url(#tower)"/>
+    <path d="M605 223 C624 204 656 204 675 223 C660 236 620 236 605 223 Z" fill="#ffcc9e"/>
+    <path d="M601 314 C624 334 656 334 679 314" fill="none" stroke="#fff3e8" stroke-width="14" stroke-linecap="round"/>
+    <path d="M590 455 C620 483 660 483 690 455" fill="none" stroke="#fff3e8" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="640" cy="666" r="24" fill="#1f7a74"/>
+    <rect x="468" y="132" width="344" height="78" rx="39" fill="#fffdf8" stroke="#1f7a74" stroke-width="4"/>
+    <text x="640" y="182" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="700" fill="#155a57">泡泡尾巴 · 广州塔店</text>
+  </g>
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" fill="#21303b">
+    <text class="map-label" x="88" y="334" font-size="28" font-weight="700" fill="#21303b">阅江西路</text>
+    <text class="map-label" x="780" y="272" font-size="28" font-weight="700" fill="#21303b">艺洲路</text>
+    <text class="map-label" x="500" y="86" font-size="26" fill="#4b6572" font-weight="700">赤岗塔站</text>
+    <text class="map-label" x="712" y="710" font-size="28" fill="#155a57" font-weight="800">珠江</text>
+    <text class="map-label" x="922" y="580" font-size="26" fill="#155a57" font-weight="800">海心桥</text>
+    <text class="map-label" x="98" y="136" font-size="23" fill="#155a57" font-weight="800">海珠湿地绿带</text>
+    <text class="map-label" x="960" y="158" font-size="23" fill="#155a57" font-weight="800">二沙岛方向</text>
+  </g>
+  <g>
+    <circle cx="560" cy="286" r="18" fill="#1f7a74"/>
+    <circle cx="560" cy="286" r="8" fill="#fff"/>
+    <rect x="400" y="244" width="130" height="46" rx="23" fill="#ffffff" stroke="#dcebe6" stroke-width="2"/>
+    <text x="465" y="275" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="800" fill="#155a57">广州塔站</text>
+  </g>
+  <g>
+    <rect x="62" y="620" width="376" height="74" rx="22" fill="#ffffff" opacity="0.92"/>
+    <circle cx="104" cy="657" r="13" fill="#ff8e74"/>
+    <text x="132" y="648" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#21303b">广东省广州市广州塔1号</text>
+    <text x="132" y="678" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" fill="#60727d">近广州塔地铁站，沿阅江西路步行可达</text>
+  </g>
+</svg>

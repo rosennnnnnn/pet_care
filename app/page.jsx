@@ -13,7 +13,7 @@ const bookingInfo = {
   phone: "021-6688-8899",
   email: "hello@bubbletail.pet",
   wechat: "BubbleTailCare",
-  address: "上海市静安区汶水路 188 号 1 层",
+  address: "广东省广州市广州塔1号",
   hours: "周一至周日 10:00 - 20:00，周五延长至 21:00",
 };
 
@@ -182,6 +182,42 @@ const reviews = [
     label: "换毛季去浮毛护理",
     score: "5.0 / 5",
     text: "浮毛处理特别细致，回家后沙发上掉毛真的少了很多。最加分的是接送时间准，页面展示的风格和实际门店气质也很一致。",
+  },
+  {
+    name: "陈女士 / 布偶云朵",
+    label: "长毛猫梳通护理",
+    score: "5.0 / 5",
+    text: "云朵胸口容易打结，美容师没有硬扯，会边梳边停下来观察情绪。洗完毛蓬松但不炸，回家也没有躲起来。",
+  },
+  {
+    name: "许先生 / 边牧阿布",
+    label: "运动犬深层清洁",
+    score: "4.9 / 5",
+    text: "阿布每周去草地玩，脚底和腹部很容易脏。这里清洁得很细，离店时还把脚毛修得很利落，后续打理轻松不少。",
+  },
+  {
+    name: "林女士 / 银渐层芝麻",
+    label: "敏感宠安抚洗护",
+    score: "5.0 / 5",
+    text: "芝麻第一次在外面洗澡，店员会提前留出适应时间，也会把过程中需要暂停的地方说明白。整个体验比我预想安心很多。",
+  },
+  {
+    name: "王先生 / 柯基豆包",
+    label: "定期洁净套餐",
+    score: "4.8 / 5",
+    text: "豆包腿短，雨天后肚皮特别难清理。洗护后毛发干透、味道清爽，预约时间也安排得准，不用在店里等很久。",
+  },
+  {
+    name: "赵女士 / 贵宾桃桃",
+    label: "造型修剪复购",
+    score: "5.0 / 5",
+    text: "每次修型都会先确认想保留的长度和脸型，剪完很自然，不会突然变得认不出来。照片发给家人都说清爽可爱。",
+  },
+  {
+    name: "沈先生 / 橘猫年糕",
+    label: "短毛猫去浮毛",
+    score: "4.9 / 5",
+    text: "年糕掉毛季很夸张，做完去浮毛后抱起来明显干净很多。工作人员还提醒了家里梳毛频率和洗护间隔。",
   },
 ];
 
@@ -515,19 +551,21 @@ function Reviews() {
           <h2>回头客最在意的不是洗得多快，而是宠物下次还愿意来</h2>
           <p>以下评价文案为页面展示示例，适合放在宠物门店官网或活动页中，帮助快速传达门店的服务气质。</p>
         </div>
-        <div className="review-grid">
-          {reviews.map((review) => (
-            <article className="review-card" key={review.name}>
-              <div className="review-top">
-                <div className="review-name">
-                  <strong>{review.name}</strong>
-                  <span>{review.label}</span>
+        <div className="review-carousel" aria-label="客户评价轮播">
+          <div className="review-track">
+            {[...reviews, ...reviews].map((review, index) => (
+              <article className="review-card" key={`${review.name}-${index}`} aria-hidden={index >= reviews.length}>
+                <div className="review-top">
+                  <div className="review-name">
+                    <strong>{review.name}</strong>
+                    <span>{review.label}</span>
+                  </div>
+                  <div className="score">{review.score}</div>
                 </div>
-                <div className="score">{review.score}</div>
-              </div>
-              <p>{review.text}</p>
-            </article>
-          ))}
+                <p>{review.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -553,18 +591,26 @@ function Booking() {
                 </a>
               </div>
             </div>
-            <div className="booking-cards">
-              <div className="booking-card">
-                <strong>营业时间</strong>
-                <span>{bookingInfo.hours}</span>
+            <div className="store-info">
+              <div className="booking-cards">
+                <div className="booking-card">
+                  <strong>营业时间</strong>
+                  <span>{bookingInfo.hours}</span>
+                </div>
+                <div className="booking-card">
+                  <strong>门店地址</strong>
+                  <span>{bookingInfo.address}，近广州塔地铁站，步行约 5 分钟</span>
+                </div>
+                <div className="booking-card">
+                  <strong>微信咨询</strong>
+                  <span>{bookingInfo.wechat}，请提前告知体型、品种、毛量和是否有打结。</span>
+                </div>
               </div>
-              <div className="booking-card">
-                <strong>门店地址</strong>
-                <span>{bookingInfo.address}，地铁步行约 5 分钟</span>
-              </div>
-              <div className="booking-card">
-                <strong>微信咨询</strong>
-                <span>{bookingInfo.wechat}，请提前告知体型、品种、毛量和是否有打结。</span>
+              <div className="store-map" aria-label={`${bookingInfo.address} 周边手绘地图`}>
+                <img
+                  src="/assets/images/store-map-guangzhou-tower.svg"
+                  alt="广东省广州市广州塔1号周边手绘地图"
+                />
               </div>
             </div>
           </div>

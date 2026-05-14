@@ -21,3 +21,5 @@ coverage
 # Legacy static-page backup from before the Next.js migration
 index.html
 assets/
+!public/assets/
+!public/assets/**
